@@ -1,0 +1,1 @@
+<a href="{devblocks_url}c=config&a=shiftplanning{/devblocks_url}">{'wgm.shiftplanning.common'|devblocks_translate}</a>

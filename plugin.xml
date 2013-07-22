@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.devblocks.com/schema/plugin.xsd">
+	<id>wgm.shiftplanning</id>
+	<name>ShiftPlanning.com Integration</name>
+	<description>This plugin provides integration with ShiftPlanning.com via their REST API. It provides a way to incorporate worker shifts into Virtual Attendant behaviors.</description>
+	<author>Webgroup Media, LLC.</author>
+	<version>0.0.1</version>
+	<link>http://www.cerberusweb.com/</link>
+	<image>plugin.png</image>
+
+	<!-- Requirements -->
+
+	<requires>
+		<app_version min="6.4.4" max="6.4.99" />
+		<!--<php_extension name="curl" />-->
+	</requires>
+
+	<!-- Plugin Dependencies -->
+	
+	<dependencies>
+		<require plugin_id="cerberusweb.core" version="6.4.0" />
+	</dependencies>
+
+	<!-- Exported Classes -->
+	
+	<class_loader>
+		<file path="api/App.php">
+			<class name="WgmShiftPlanning_API" />
+		</file>
+	</class_loader>
+
+	<!-- Extensions -->
+
+	<extensions>
+
+		<!-- Setup Page Menu Item -->
+
+		<extension point="cerberusweb.ui.page.menu.item">
+			<id>wgmshiftplanning.setup.menu.plugins.shiftplanning</id>
+			<name>ShiftPlanning Plugins Menu Item</name>
+			<class>
+				<file>api/App.php</file>
+				<name>WgmShiftPlanning_SetupPluginsMenuItem</name>
+			</class>
+			<params>
+				<param key="page_id" value="core.page.configuration" />
+				<param key="menu_id" value="core.setup.menu.plugins" />
+			</params>
+		</extension>
+		
+		<!-- Setup Page Sections -->
+		
+		<extension point="cerberusweb.ui.page.section">
+			<id>wgmshiftplanning.setup.shiftplanning</id>
+			<name>Setup Page ShiftPlanning Section</name>
+			<class>
+				<file>api/App.php</file>
+				<name>WgmShiftPlanning_SetupSection</name>
+			</class>
+			<params>
+				<param key="page_id" value="core.page.configuration" />
+				<param key="uri" value="shiftplanning" />
+			</params>
+		</extension>
+
+		<!-- Event Actions -->
+		
+		<extension point="devblocks.event.action">
+			<id>wgmshiftplanning.event.action.get_available_workers</id>
+			<name>Get Available Workers from ShiftPlanning Event Action</name>
+			<class>
+				<file>api/App.php</file>
+				<name>WgmShiftPlanning_EventActionGetAvailableWorkers</name>
+			</class>
+			<params>
+				<param key="label" value="Get available workers from ShiftPlanning" />
+				<param key="events">
+					<value>
+						<data key="*" />
+					</value>
+				</param>
+			</params>
+		</extension>
+
+	</extensions>
+</plugin>
