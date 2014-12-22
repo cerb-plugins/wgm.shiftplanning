@@ -4,21 +4,21 @@
 	<name>ShiftPlanning.com Integration</name>
 	<description>This plugin provides integration with ShiftPlanning.com via their REST API. It provides a way to incorporate worker shifts into Virtual Attendant behaviors.</description>
 	<author>Webgroup Media, LLC.</author>
-	<version>0.0.5</version>
+	<version>0.0.6</version>
 	<link>http://www.cerberusweb.com/</link>
 	<image>plugin.png</image>
 
 	<!-- Requirements -->
 
 	<requires>
-		<app_version min="6.4.4" max="6.8.99" />
+		<app_version min="6.4.4" max="6.9.99" />
 		<!--<php_extension name="curl" />-->
 	</requires>
 
 	<!-- Plugin Dependencies -->
 	
 	<dependencies>
-		<require plugin_id="cerberusweb.core" version="6.4.0" />
+		<require plugin_id="cerberusweb.core" version="6.4.4" />
 	</dependencies>
 
 	<!-- Exported Classes -->
