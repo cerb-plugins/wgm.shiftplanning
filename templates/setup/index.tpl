@@ -25,7 +25,7 @@
 		
 		<div class="status"></div>
 	
-		<button type="button" class="submit"><span class="cerb-sprite2 sprite-tick-circle"></span> {'common.save_changes'|devblocks_translate|capitalize}</button>	
+		<button type="button" class="submit"><span class="glyphicons glyphicons-circle-ok" style="color:rgb(0,180,0);"></span> {'common.save_changes'|devblocks_translate|capitalize}</button>	
 		
 		</form>
 	</div>
@@ -37,7 +37,7 @@
 		<input type="hidden" name="section" value="shiftplanning">
 		<input type="hidden" name="action" value="saveEmployeesJson">
 		
-		<button type="button" class="sync"><span class="cerb-sprite2 sprite-arrow-circle-135-left"></span> {'common.synchronize'|devblocks_translate|capitalize}</button>
+		<button type="button" class="sync"><span class="glyphicons glyphicons-refresh"></span> {'common.synchronize'|devblocks_translate|capitalize}</button>
 		
 		<div id="divShiftPlanningEmployeesToWorkers" style="margin:10px 0px 10px 0px;">
 			{include file="devblocks:wgm.shiftplanning::setup/employee_to_worker.tpl"}
@@ -45,7 +45,7 @@
 		
 		<div class="status"></div>
 		
-		<button type="button" class="submit"><span class="cerb-sprite2 sprite-tick-circle"></span> {'common.save_changes'|devblocks_translate|capitalize}</button>	
+		<button type="button" class="submit"><span class="glyphicons glyphicons-circle-ok" style="color:rgb(0,180,0);"></span> {'common.save_changes'|devblocks_translate|capitalize}</button>	
 		
 		</form>
 	</div>
