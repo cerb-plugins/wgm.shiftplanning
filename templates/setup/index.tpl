@@ -12,6 +12,7 @@
 		<input type="hidden" name="a" value="handleSectionAction">
 		<input type="hidden" name="section" value="shiftplanning">
 		<input type="hidden" name="action" value="saveJson">
+		<input type="hidden" name="_csrf_token" value="{$session.csrf_token}">
 		
 		<b>API Key:</b><br>
 		<input type="text" name="api_key" value="{$params.api_key}" size="64" placeholder="e.g. a1b2c3d4e5f6"><br>
@@ -36,6 +37,7 @@
 		<input type="hidden" name="a" value="handleSectionAction">
 		<input type="hidden" name="section" value="shiftplanning">
 		<input type="hidden" name="action" value="saveEmployeesJson">
+		<input type="hidden" name="_csrf_token" value="{$session.csrf_token}">
 		
 		<button type="button" class="sync"><span class="glyphicons glyphicons-refresh"></span> {'common.synchronize'|devblocks_translate|capitalize}</button>
 		

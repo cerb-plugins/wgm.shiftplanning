@@ -4,7 +4,7 @@
 	<name>ShiftPlanning.com Integration</name>
 	<description>This plugin provides integration with ShiftPlanning.com via their REST API. It provides a way to incorporate worker shifts into Virtual Attendant behaviors.</description>
 	<author>Webgroup Media, LLC.</author>
-	<version>0.0.8</version>
+	<version>0.0.9</version>
 	<link>http://www.cerberusweb.com/</link>
 	<image>plugin.png</image>
 
