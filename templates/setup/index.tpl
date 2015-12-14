@@ -71,7 +71,7 @@ $('#frmSetupShiftPlanning BUTTON.submit')
 
 $('#frmShiftPlanningEmployees BUTTON.sync')
 	.click(function() {
-		$('#divShiftPlanningEmployeesToWorkers').html('Loading...');
+		$('#divShiftPlanningEmployeesToWorkers').text('Loading...');
 		
 		genericAjaxGet('divShiftPlanningEmployeesToWorkers', 'c=config&a=handleSectionAction&section=shiftplanning&action=syncEmployees');
 	})
