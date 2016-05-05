@@ -405,16 +405,14 @@ class WgmShiftPlanning_API {
 	private function _postJson($params=array(), $json=null) {
 		$url = 'https://www.shiftplanning.com/api/';
 		
-		$ch = curl_init($url);
+		$ch = DevblocksPlatform::curlInit($url);
 		
 		$headers = array();
 		
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, array('data' => json_encode($json) ));
 		
-		$out = curl_exec($ch);
+		$out = DevblocksPlatform::curlExec($ch, true);
 		$info = curl_getinfo($ch);
 		
 		// [TODO] This can fail without HTTPS
