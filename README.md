@@ -1,11 +1,11 @@
 Cerb Plugins - wgm.shiftplanning
 ===========================================
 Copyright (C) 2013 Webgroup Media, LLC.  
-[http://www.cerberusweb.com/](http://www.cerberusweb.com/)  
+[http://cerb.io/](http://cerb.io/)  
 
 What's this?
 ------------
-This plugin provides integration with [ShiftPlanning.com](http://www.shiftplanning.com/) via their REST API. It provides a way to incorporate worker shifts into Virtual Attendant behaviors.
+This plugin provides integration with [ShiftPlanning.com](http://www.shiftplanning.com/) via their REST API. It provides a way to incorporate worker shifts into bot behaviors.
 
 Installation
 ------------
