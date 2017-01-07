@@ -11,7 +11,7 @@
 	<!-- Requirements -->
 
 	<requires>
-		<app_version min="7.2" max="7.3.99" />
+		<app_version min="7.3" max="7.3.99" />
 		<php_extension name="curl" />
 	</requires>
 
@@ -37,7 +37,7 @@
 
 		<extension point="cerberusweb.ui.page.menu.item">
 			<id>wgmshiftplanning.setup.menu.plugins.shiftplanning</id>
-			<name>ShiftPlanning Plugins Menu Item</name>
+			<name>ShiftPlanning</name>
 			<class>
 				<file>api/App.php</file>
 				<name>WgmShiftPlanning_SetupPluginsMenuItem</name>
