@@ -4,7 +4,7 @@ class WgmShiftPlanning_SetupPluginsMenuItem extends Extension_PageMenuItem {
 	const POINT = 'wgmshiftplanning.setup.menu.plugins.shiftplanning';
 	
 	function render() {
-		$tpl = DevblocksPlatform::getTemplateService();
+		$tpl = DevblocksPlatform::services()->template();
 		$tpl->assign('extension', $this);
 		$tpl->display('devblocks:wgm.shiftplanning::setup/menu_item.tpl');
 	}
@@ -16,7 +16,7 @@ class WgmShiftPlanning_SetupSection extends Extension_PageSection {
 	const ID = 'wgmshiftplanning.setup.shiftplanning';
 	
 	function render() {
-		$tpl = DevblocksPlatform::getTemplateService();
+		$tpl = DevblocksPlatform::services()->template();
 
 		$visit = CerberusApplication::getVisit();
 		$visit->set(ChConfigurationPage::ID, 'shiftplanning');
@@ -36,7 +36,7 @@ class WgmShiftPlanning_SetupSection extends Extension_PageSection {
 	}
 	
 	function saveJsonAction() {
-		$cache = DevblocksPlatform::getCacheService();
+		$cache = DevblocksPlatform::services()->cache();
 		$cache->remove(WgmShiftPlanning_API::_CACHE_EMPLOYEES_AVAILABLE);
 		
 		try {
@@ -73,7 +73,7 @@ class WgmShiftPlanning_SetupSection extends Extension_PageSection {
 	}
 	
 	function syncEmployeesAction() {
-		$tpl = DevblocksPlatform::getTemplateService();
+		$tpl = DevblocksPlatform::services()->template();
 		$shiftplanning = WgmShiftPlanning_API::getInstance();
 		
 		// Workers
@@ -119,7 +119,7 @@ class WgmShiftPlanning_SetupSection extends Extension_PageSection {
 	}
 	
 	function saveEmployeesJsonAction() {
-		$cache = DevblocksPlatform::getCacheService();
+		$cache = DevblocksPlatform::services()->cache();
 		$cache->remove(WgmShiftPlanning_API::_CACHE_EMPLOYEES_AVAILABLE);
 		
 		try {
@@ -152,7 +152,7 @@ endif;
 if(class_exists('Extension_DevblocksEventAction')):
 class WgmShiftPlanning_EventActionGetAvailableWorkers extends Extension_DevblocksEventAction {
 	function render(Extension_DevblocksEvent $event, Model_TriggerEvent $trigger, $params=array(), $seq=null) {
-		$tpl = DevblocksPlatform::getTemplateService();
+		$tpl = DevblocksPlatform::services()->template();
 		$tpl->assign('params', $params);
 		
 		if(!is_null($seq))
@@ -373,7 +373,7 @@ class WgmShiftPlanning_API {
 	}
 	
 	function getEmployeesAvailableNow($schedule_id=null, $nocache=false) {
-		$cache = DevblocksPlatform::getCacheService();
+		$cache = DevblocksPlatform::services()->cache();
 		
 		if($nocache || false == ($response = $cache->load(self::_CACHE_EMPLOYEES_AVAILABLE))) {
 			$response = $this->getScheduleShifts(date('Y-m-d', strtotime('-1 day')), date('Y-m-d', strtotime('+1 day')));
