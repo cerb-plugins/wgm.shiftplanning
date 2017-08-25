@@ -4,7 +4,7 @@
 	<name>ShiftPlanning.com Integration</name>
 	<description>This plugin provides integration with ShiftPlanning.com via their REST API. It provides a way to incorporate worker shifts into bot behaviors.</description>
 	<author>Webgroup Media, LLC.</author>
-	<version>0.1.0</version>
+	<version>0.1.1</version>
 	<link>https://cerb.ai/</link>
 	<image>plugin.png</image>
 

@@ -149,7 +149,6 @@ class WgmShiftPlanning_SetupSection extends Extension_PageSection {
 };
 endif;
 
-if(class_exists('Extension_DevblocksEventAction')):
 class WgmShiftPlanning_EventActionGetAvailableWorkers extends Extension_DevblocksEventAction {
 	function render(Extension_DevblocksEvent $event, Model_TriggerEvent $trigger, $params=array(), $seq=null) {
 		$tpl = DevblocksPlatform::services()->template();
@@ -244,7 +243,6 @@ class WgmShiftPlanning_EventActionGetAvailableWorkers extends Extension_Devblock
 			$dict->$var_key = $worker_contexts;
 	}
 };
-endif;
 
 class WgmShiftPlanning_API {
 	private static $_instance = null;
